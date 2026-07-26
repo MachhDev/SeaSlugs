@@ -38,7 +38,7 @@ header {
   z-index: 10;
   top: 0;
   width: 100%;
-  height: 74px;
+  height: 64px;
   padding: 0 5vw;
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@ header {
 
 .hero {
   --hero-color: #ffe26f;
-  min-height: 100svh;
+  min-height: 80svh;
   padding: 30vh 8vw 9vh;
   background:
     radial-gradient(circle at 78% 42%, color-mix(in srgb, var(--hero-color) 68%, transparent), transparent 31%),
@@ -88,7 +88,7 @@ header {
 
 .hero h1 {
   margin: 18px 0 31px;
-  font: clamp(55px, 10vw, 142px)/.83 'Playfair Display';
+  font: clamp(50px, 9vw, 120px)/.83 'Playfair Display';
   letter-spacing: -.07em;
 }
 
@@ -99,8 +99,8 @@ header {
 }
 
 .intro {
-  max-width: 410px;
-  font-size: 17px;
+  max-width: 400px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -227,13 +227,13 @@ header {
   padding: 14px 0 0;
   border-top: 1px solid #1d2b2c;
   list-style: none;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
 .copy li:first-child {
   margin-bottom: 11px;
-  font: 9px 'DM Mono';
+  font: 18px 'DM Mono';
   letter-spacing: .1em;
 }
 
@@ -280,7 +280,7 @@ footer a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 65px;
+    gap: 50px;
     padding: 13vh 11vw 12vh 8vw;
   }
   .photo {
