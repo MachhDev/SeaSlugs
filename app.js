@@ -42,7 +42,7 @@ slugs.forEach(([hue, name, latin, fact, image], index) => {
   article.className = 'slug';
   article.id = id;
   article.dataset.index = index;
-  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="src/images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100"><figcaption>real reef photograph · Wikimedia Commons</figcaption></figure><div class="copy"><p class="number">${String(index + 1).padStart(2, '0')} · ${hue}</p><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
+  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100"><figcaption>real reef photograph · Wikimedia Commons</figcaption></figure><div class="copy"><p class="number">${String(index + 1).padStart(2, '0')} · ${hue}</p><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
   collection.append(article);
 });
 
