@@ -206,7 +206,7 @@ header {
     brightness(1.05)
     saturate(1.18)
     contrast(1.03)
-    drop-shadow(0 24px 34px color-mix(in srgb, var(--accent) 28%, transparent));
+    drop-shadow(0 24px 34px color-mix(in srgb, transparent));
 }
 
 .photo figcaption {
@@ -226,7 +226,7 @@ header {
 
 .number {
   margin: 0 0 24px;
-  color: color-mix(in srgb, var(--accent) 70%, #202a2b);
+  color: color-mix(in srgb, #202a2b);
 }
 
 .copy h2 {
