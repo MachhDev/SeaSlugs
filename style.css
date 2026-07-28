@@ -372,15 +372,16 @@ footer::before {
   inset: 0;
   content: '';
   pointer-events: none;
-  background: radial-gradient(
-    circle at 58% 46%,
-    #f7e66b 0%,
-    #79bea6 23%,
-    #77b9ce 44%,
-    #8b8fc8 63%,
-    #b27ac3 79%,
-    #ed93a9 92%,
-    #f5b578 100%
+  background: conic-gradient(
+    from 205deg at 50% -26svh,
+    #ed93a9 0%,
+    #f5b578 15%,
+    #f7e66b 30%,
+    #79bea6 46%,
+    #77b9ce 62%,
+    #8b8fc8 78%,
+    #b27ac3 91%,
+    #ed93a9 100%
   );
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
   mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
