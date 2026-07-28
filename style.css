@@ -372,19 +372,19 @@ footer::before {
   inset: 0;
   content: '';
   pointer-events: none;
-  background: conic-gradient(
-    from 205deg at 50% -26svh,
-    #ed93a9 0%,
-    #f5b578 15%,
-    #f7e66b 30%,
-    #79bea6 46%,
-    #77b9ce 62%,
-    #8b8fc8 78%,
-    #b27ac3 91%,
-    #ed93a9 100%
+  background: repeating-conic-gradient(
+    from var(--finale-spin) at 50% -26svh,
+    #ed93a9 0deg 18deg,
+    #f5b578 18deg 36deg,
+    #f7e66b 36deg 54deg,
+    #79bea6 54deg 72deg,
+    #77b9ce 72deg 90deg,
+    #8b8fc8 90deg 108deg,
+    #b27ac3 108deg 126deg
   );
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
   mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
+  animation: finale-swirl 18s linear infinite;
 }
 
 footer p {
@@ -405,7 +405,8 @@ footer a {
   html { scroll-behavior: auto; }
   .hero { animation: none; }
   .slug.finale::before,
-  .slug.finale::after { animation: none; }
+  .slug.finale::after,
+  footer::before { animation: none; }
 }
 
 @media (max-width: 720px) {
