@@ -305,15 +305,6 @@ header {
     drop-shadow(0 24px 34px color-mix(in srgb, transparent));
 }
 
-.photo figcaption {
-  position: absolute;
-  bottom: -29px;
-  left: 0;
-  font: 9px 'DM Mono';
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
 .copy {
   z-index: 2;
   align-self: center;
@@ -402,6 +393,16 @@ footer a {
   text-transform: uppercase;
 }
 
+footer .image-note {
+  position: absolute;
+  bottom: 34px;
+  left: 8vw;
+  font: 9px 'DM Mono';
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero { animation: none; }
@@ -444,5 +445,4 @@ footer a {
     width: 130vw;
     height: 130vw;
   }
-  .photo figcaption { bottom: -23px; }
 }

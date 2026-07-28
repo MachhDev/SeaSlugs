@@ -137,14 +137,14 @@ root.innerHTML = `
     <nav class="colorline" aria-label="Jump to a sea slug"></nav>
     <section id="top" class="hero"><p class="eyebrow">A field guide to the sea’s living spectrum</p><h1>Every color<br>has a <em>slug.</em></h1><p class="intro">Scroll the reef in color order. Each small, soft-bodied marvel is a real animal with an unbelievable trick.</p></section>
     <section id="collection"></section>
-    <footer><p>Keep drifting. The ocean is full of color.</p><a href="#top">back to the surface ↑</a></footer>
+    <footer><p>Keep drifting. The ocean is full of color.</p><a href="#top">back to the surface ↑</a><small class="image-note">All images used with permission.</small></footer>
   </main>`;
 
 const main = root.querySelector('main');
 const collection = root.querySelector('#collection');
 const colorline = root.querySelector('.colorline');
 
-slugs.forEach(({ hue, name, latin, fact, image, credit, imageScale = 1 }, index) => {
+slugs.forEach(({ hue, name, latin, fact, image, imageScale = 1 }, index) => {
   const id = `slug-${index}`;
   const button = document.createElement('button');
   button.type = 'button';
@@ -158,7 +158,7 @@ slugs.forEach(({ hue, name, latin, fact, image, credit, imageScale = 1 }, index)
   article.className = `slug${latin === 'Babakina anadoni' ? ' finale' : ''}`;
   article.id = id;
   article.dataset.index = index;
-  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"><figcaption>real animal · ${credit}</figcaption></figure><div class="copy"><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
+  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"></figure><div class="copy"><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
   collection.append(article);
 });
 
