@@ -6,6 +6,18 @@
   initial-value: #e63836;
 }
 
+@property --finale-spin {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 12deg;
+}
+
+@property --finale-spin-reverse {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 :root {
   --red: #e63836;
   --coral: #e95343;
@@ -218,7 +230,7 @@ header {
     radial-gradient(circle at 78% 72%, #44e6b2a8 0 9%, transparent 29%),
     radial-gradient(circle at 68% 22%, #5f7dffa0 0 10%, transparent 31%),
     repeating-conic-gradient(
-      from 12deg at 50% 50%,
+      from var(--finale-spin) at 50% 50%,
       #ff4f76 0deg 18deg,
       #ffad38 18deg 36deg,
       #f6e657 36deg 54deg,
@@ -238,7 +250,7 @@ header {
   inset: -24svh -20% 0;
   background:
     radial-gradient(circle at 50% 50%, transparent 0 14%, #f5f0e9 15% 19%, transparent 20% 31%, #ffffff70 32% 34%, transparent 35%),
-    repeating-conic-gradient(from 0deg, transparent 0deg 13deg, #ffffff80 14deg 15deg, transparent 16deg 28deg);
+    repeating-conic-gradient(from var(--finale-spin-reverse), transparent 0deg 13deg, #ffffff80 14deg 15deg, transparent 16deg 28deg);
   opacity: .48;
   mix-blend-mode: soft-light;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh, #000 calc(100% - 18svh), transparent 100%);
@@ -257,11 +269,11 @@ header {
 }
 
 @keyframes finale-swirl {
-  to { transform: rotate(1turn) scale(1.08); }
+  to { --finale-spin: 372deg; }
 }
 
 @keyframes finale-swirl-reverse {
-  to { transform: rotate(-1turn) scale(1.12); }
+  to { --finale-spin-reverse: -360deg; }
 }
 
 .wash {
