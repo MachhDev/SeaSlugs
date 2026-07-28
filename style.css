@@ -339,19 +339,30 @@ header {
 }
 
 footer {
-  min-height: 65svh;
-  padding: 22vh 8vw;
+  position: relative;
+  z-index: 2;
+  min-height: 89svh;
+  margin-top: -24svh;
+  padding: 36vh 8vw 16vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+footer::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  pointer-events: none;
   background:
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--rainbow) 28%, #f5f0e9) 0,
-      transparent 18vh
-    ),
-    linear-gradient(135deg, #ed93a9, #f7e66b, #79bea6, #8b8fc8);
+    radial-gradient(circle at 48% 8%, #aa8edb8c 0 10%, transparent 34%),
+    linear-gradient(135deg, #ed93a9, #f5b578 24%, #f7e66b 43%, #79bea6 66%, #779fce 82%, #8b8fc8);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
 }
 
 footer p {
