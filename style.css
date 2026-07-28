@@ -374,22 +374,23 @@ footer::before {
   pointer-events: none;
   background:
     radial-gradient(
-      circle at 50% 8%,
-      transparent 0 12%,
-      #ffffff80 13% 16%,
-      transparent 17% 28%,
-      #ffffff52 29% 31%,
-      transparent 32%
+      circle at 58% 48%,
+      #ffffff66 0 5%,
+      transparent 6% 13%,
+      #ffffff80 14% 17%,
+      transparent 18% 29%,
+      #ffffff52 30% 32%,
+      transparent 33%
     ),
-    repeating-conic-gradient(
-      from 12deg at 50% 8%,
-      #ed93a9 0deg 28deg,
-      #f5b578 28deg 56deg,
-      #f7e66b 56deg 84deg,
-      #79bea6 84deg 112deg,
-      #77b9ce 112deg 140deg,
-      #8b8fc8 140deg 168deg,
-      #b27ac3 168deg 196deg
+    conic-gradient(
+      from 12deg at 58% 48%,
+      #ed93a9 0% 14%,
+      #f5b578 14% 28%,
+      #f7e66b 28% 42%,
+      #79bea6 42% 57%,
+      #77b9ce 57% 71%,
+      #8b8fc8 71% 85%,
+      #b27ac3 85% 100%
     );
   filter: blur(24px) saturate(1.12);
   transform: scale(1.08);
