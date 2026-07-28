@@ -1,17 +1,164 @@
 const slugs = [
-  ['red', 'Spanish dancer', 'Hexabranchus sanguineus', 'Its broad mantle can ripple like a flamenco skirt, letting this nudibranch swim through the water.', 'spanish-dancer.png'],
-  ['orange', 'Orange gumdrop', 'Doriopsilla gemela', 'It grazes on sponges — and its cheerful orange skin warns predators that it may taste terrible.', 'orange-gumdrop.png'],
-  ['yellow', 'Yellow umbrella', 'Tylodina perversa', 'Like a tiny living umbrella, it carries a shell and specializes in eating yellow sea sponges.', 'yellow-umbrella.png'],
-  ['lemon', 'Sea lemon', 'Archidoris pseudoargus', 'Its bumpy, lemon-peel body helps it vanish against the sponges it loves to eat.', 'sea-lemon.png'],
-  ['green', 'Lettuce sea slug', 'Elysia crispata', 'It borrows chloroplasts from algae and keeps them working — a solar-powered animal!', 'lettuce-sea-slug.png'],
-  ['emerald', 'Eastern emerald elysia', 'Elysia chlorotica', 'It can survive for months using photosynthesis after stealing chloroplasts from its algal food.', 'eastern-emerald.png'],
-  ['mint', 'Leaf sheep', 'Costasiella kuroshimae', 'Its leaf-like cerata house borrowed chloroplasts, helping this slug harvest sunlight.', 'leaf-sheep.png'],
-  ['blue', 'Blue dragon', 'Glaucus atlanticus', 'It eats venomous Portuguese man o’ war and stores their stinging cells for its own defense.', 'blue-dragon.png'],
-  ['azure', "Loch's chromodoris", 'Chromodoris lochi', 'Its bright blue pattern advertises chemical defenses it gets from the sponges it eats.', 'lochs-chromodoris.png'],
-  ['violetblue', 'Blue dragon sea slug', 'Pteraeolidia ianthina', 'Its long, violet-tipped branches hold solar partners: symbiotic algae that share their energy.', 'pteraeolidia.png'],
-  ['purple', "Bullock's hypselodoris", 'Hypselodoris bullockii', 'Its lavender mantle is both a billboard and a bluff: it signals a bad-tasting chemical defense.', 'bullocks-hypselodoris.png'],
-  ['orchid', 'Purple hypselodoris', 'Hypselodoris apolegma', 'This reef wanderer carries a feathery gill plume on its back, where a shell would be on most snails.', 'purple-hypselodoris.png'],
-  ['rainbow', 'Rainbow sea slug', 'Babakina anadoni', 'Its glassy body flashes an entire spectrum — a fitting finale for the ocean’s tiny color laboratory.', 'rainbow-sea-slug.png']
+  {
+    hue: 'red',
+    name: 'Spanish dancer',
+    latin: 'Hexabranchus sanguineus',
+    fact: 'It escapes by flexing its broad mantle in powerful waves, swimming like a flamenco skirt in motion.',
+    image: 'spanish-dancer.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'coral',
+    name: 'Red-reticulate goniobranch',
+    latin: 'Goniobranchus cf. reticulatus',
+    fact: 'Its red lattice is a warning sign: chromodorids concentrate defensive chemicals from sponge prey around the mantle edge.',
+    image: 'red-reticulate-goniobranchus.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'orange',
+    name: 'Orange gumdrop',
+    latin: 'Doriopsilla gemela',
+    fact: 'It grazes on sponges, and its saturated orange color warns predators that this soft-looking slug is chemically defended.',
+    image: 'orange-gumdrop.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'amber',
+    name: 'Orange berthella',
+    latin: 'Berthella aurantiaca',
+    fact: 'Its armor is hidden: a broad internal shell protects most of its organs beneath the glowing orange mantle.',
+    image: 'orange-berthella.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'yellow',
+    name: 'Yellow umbrella',
+    latin: 'Tylodina perversa',
+    fact: 'Unlike most sea slugs, it keeps an umbrella-shaped external shell and matches the yellow sponges it eats.',
+    image: 'yellow-umbrella.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'gold',
+    name: 'Monterey dorid',
+    latin: 'Doris montereyensis',
+    fact: 'Its yellow, knobbly back mimics the color and texture of the sponges it specializes in eating.',
+    image: 'monterey-dorid.png',
+    credit: 'user-supplied iNaturalist cutout'
+  },
+  {
+    hue: 'lemon',
+    name: 'Sea lemon',
+    latin: 'Doris pseudoargus',
+    fact: 'Its lemon-peel texture camouflages it on sponge-covered reefs, while retractable gills and rhinophores tuck away from danger.',
+    image: 'sea-lemon.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'chartreuse',
+    name: 'Mediterranean oxynoe',
+    latin: 'Oxynoe olivacea',
+    fact: 'It turns an algal chemical into stronger oxytoxins—and can drop its toxin-loaded tail when attacked.',
+    image: 'oxynoe-olivacea.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'green',
+    name: 'Lettuce sea slug',
+    latin: 'Elysia crispata',
+    fact: 'It steals chloroplasts from algae and keeps them photosynthesizing inside its leafy folds for months.',
+    image: 'lettuce-sea-slug.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'emerald',
+    name: 'Eastern emerald elysia',
+    latin: 'Elysia chlorotica',
+    fact: 'It keeps chloroplasts from Vaucheria algae working inside its cells—one of the longest-lasting cases of kleptoplasty.',
+    image: 'eastern-emerald.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'mint',
+    name: 'Leaf sheep',
+    latin: 'Costasiella kuroshimae',
+    fact: 'It stores stolen algal chloroplasts inside its leaflike cerata, where they continue capturing light.',
+    image: 'leaf-sheep.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'blue',
+    name: 'Blue dragon',
+    latin: 'Glaucus atlanticus',
+    fact: 'It eats Portuguese men-of-war, sorts their unfired stinging cells, and packs the strongest into its own fingertips.',
+    image: 'blue-dragon.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'azure',
+    name: "Loch's chromodoris",
+    latin: 'Chromodoris lochi',
+    fact: 'Its electric-blue pattern advertises sponge-derived chemical defenses stored in glands along its mantle.',
+    image: 'lochs-chromodoris.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'iceblue',
+    name: "Willan's chromodoris",
+    latin: 'Chromodoris willani',
+    fact: 'White speckles on its gills and rhinophores act like a fingerprint, separating it from nearly identical blue relatives.',
+    image: 'willans-chromodoris.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'violetblue',
+    name: 'Blue dragon nudibranch',
+    latin: 'Pteraeolidia ianthina',
+    fact: 'It farms photosynthetic algae inside its body and stores stolen stinging cells in the tips of its cerata.',
+    image: 'pteraeolidia.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'magenta',
+    name: 'Purple flabellina',
+    latin: 'Flabellina affinis',
+    fact: 'It eats stinging hydroids without firing their weapons, then stores the stolen stinging cells in its cerata for defense.',
+    image: 'purple-flabellina.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'purple',
+    name: "Bullock's hypselodoris",
+    latin: 'Hypselodoris bullockii',
+    fact: 'Its vivid mantle is an honest warning: defensive compounds from sponge prey are packed into glands around its edge.',
+    image: 'bullocks-hypselodoris.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'orchid',
+    name: 'Purple hypselodoris',
+    latin: 'Hypselodoris apolegma',
+    fact: 'It turns sponge chemistry into protection, concentrating dietary compounds in specialized mantle glands.',
+    image: 'purple-hypselodoris.png',
+    credit: 'Wikimedia Commons'
+  },
+  {
+    hue: 'fairy',
+    name: 'Fairy butterfly sea slug',
+    latin: 'Cyerce elegans',
+    fact: 'When danger strikes, it can cast off its leaflike cerata; the sticky, writhing decoys distract a predator while it escapes.',
+    image: 'fairy-butterfly.png',
+    credit: 'user-supplied cutout'
+  },
+  {
+    hue: 'rainbow',
+    name: 'Rainbow sea slug',
+    latin: 'Babakina anadoni',
+    fact: 'Like other aeolids, it routes its digestive gland through its cerata and arms their tips with stinging cells taken from prey.',
+    image: 'rainbow-sea-slug.png',
+    credit: 'Wikimedia Commons'
+  }
 ];
 
 const root = document.querySelector('#root');
@@ -28,7 +175,7 @@ const main = root.querySelector('main');
 const collection = root.querySelector('#collection');
 const colorline = root.querySelector('.colorline');
 
-slugs.forEach(([hue, name, latin, fact, image], index) => {
+slugs.forEach(({ hue, name, latin, fact, image, credit }, index) => {
   const id = `slug-${index}`;
   const button = document.createElement('button');
   button.type = 'button';
@@ -42,13 +189,13 @@ slugs.forEach(([hue, name, latin, fact, image], index) => {
   article.className = 'slug';
   article.id = id;
   article.dataset.index = index;
-  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100"><figcaption>real reef photograph · Wikimedia Commons</figcaption></figure><div class="copy"><p class="number">${String(index + 1).padStart(2, '0')} · ${hue}</p><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
+  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100"><figcaption>real animal · ${credit}</figcaption></figure><div class="copy"><p class="number">${String(index + 1).padStart(2, '0')} · ${hue}</p><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
   collection.append(article);
 });
 
 const buttons = [...colorline.querySelectorAll('button')];
 const setActive = (index) => {
-  main.style.setProperty('--accent', `var(--${slugs[index][0]})`);
+  main.style.setProperty('--accent', `var(--${slugs[index].hue})`);
   root.querySelector('.counter').textContent = `${String(index + 1).padStart(2, '0')} / ${String(slugs.length).padStart(2, '0')}`;
   buttons.forEach((button, buttonIndex) => button.classList.toggle('on', buttonIndex === index));
 };

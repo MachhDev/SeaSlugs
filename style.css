@@ -8,17 +8,24 @@
 
 :root {
   --red: #e63836;
+  --coral: #e95343;
   --orange: #f17b26;
+  --amber: #ee9a26;
   --yellow: #f1ca35;
+  --gold: #e7b833;
   --lemon: #d6d73b;
+  --chartreuse: #a8bd36;
   --green: #63a86e;
   --emerald: #298b65;
   --mint: #9ed5a7;
   --blue: #3982d5;
   --azure: #3796bb;
+  --iceblue: #72a9cf;
   --violetblue: #626ac8;
+  --magenta: #9667bb;
   --purple: #a46bbc;
   --orchid: #d78abe;
+  --fairy: #cf7db8;
   --rainbow: #e68b8e;
 }
 
@@ -157,17 +164,24 @@ header {
     linear-gradient(
       to bottom,
       color-mix(in srgb, var(--red) 28%, #f5f0e9) 0%,
-      color-mix(in srgb, var(--orange) 28%, #f5f0e9) 8.33%,
-      color-mix(in srgb, var(--yellow) 28%, #f5f0e9) 16.66%,
-      color-mix(in srgb, var(--lemon) 28%, #f5f0e9) 25%,
-      color-mix(in srgb, var(--green) 28%, #f5f0e9) 33.33%,
-      color-mix(in srgb, var(--emerald) 28%, #f5f0e9) 41.66%,
-      color-mix(in srgb, var(--mint) 28%, #f5f0e9) 50%,
-      color-mix(in srgb, var(--blue) 28%, #f5f0e9) 58.33%,
-      color-mix(in srgb, var(--azure) 28%, #f5f0e9) 66.66%,
-      color-mix(in srgb, var(--violetblue) 28%, #f5f0e9) 75%,
-      color-mix(in srgb, var(--purple) 28%, #f5f0e9) 83.33%,
-      color-mix(in srgb, var(--orchid) 28%, #f5f0e9) 91.66%,
+      color-mix(in srgb, var(--coral) 28%, #f5f0e9) 5.26%,
+      color-mix(in srgb, var(--orange) 28%, #f5f0e9) 10.53%,
+      color-mix(in srgb, var(--amber) 28%, #f5f0e9) 15.79%,
+      color-mix(in srgb, var(--yellow) 28%, #f5f0e9) 21.05%,
+      color-mix(in srgb, var(--gold) 28%, #f5f0e9) 26.32%,
+      color-mix(in srgb, var(--lemon) 28%, #f5f0e9) 31.58%,
+      color-mix(in srgb, var(--chartreuse) 28%, #f5f0e9) 36.84%,
+      color-mix(in srgb, var(--green) 28%, #f5f0e9) 42.11%,
+      color-mix(in srgb, var(--emerald) 28%, #f5f0e9) 47.37%,
+      color-mix(in srgb, var(--mint) 28%, #f5f0e9) 52.63%,
+      color-mix(in srgb, var(--blue) 28%, #f5f0e9) 57.89%,
+      color-mix(in srgb, var(--azure) 28%, #f5f0e9) 63.16%,
+      color-mix(in srgb, var(--iceblue) 28%, #f5f0e9) 68.42%,
+      color-mix(in srgb, var(--violetblue) 28%, #f5f0e9) 73.68%,
+      color-mix(in srgb, var(--magenta) 28%, #f5f0e9) 78.95%,
+      color-mix(in srgb, var(--purple) 28%, #f5f0e9) 84.21%,
+      color-mix(in srgb, var(--orchid) 28%, #f5f0e9) 89.47%,
+      color-mix(in srgb, var(--fairy) 28%, #f5f0e9) 94.74%,
       color-mix(in srgb, var(--rainbow) 28%, #f5f0e9) 100%
     );
 }
