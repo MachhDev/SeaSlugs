@@ -9,7 +9,7 @@ const slugs = [
   },
   {
     hue: 'coral',
-    name: 'Red-reticulate goniobranch',
+    name: 'Reticulate goniobranch',
     latin: 'Goniobranchus cf. reticulatus',
     fact: 'Its red lattice is a warning sign: chromodorids concentrate defensive chemicals from sponge prey around the mantle edge.',
     image: 'red-reticulate-goniobranchus.png',
@@ -17,7 +17,7 @@ const slugs = [
   },
   {
     hue: 'orange',
-    name: 'Orange gumdrop',
+    name: 'Gumdrop nudibranch',
     latin: 'Doriopsilla gemela',
     fact: 'It grazes on sponges, and its saturated orange color warns predators that this soft-looking slug is chemically defended.',
     image: 'orange-gumdrop.png',
@@ -25,7 +25,7 @@ const slugs = [
   },
   {
     hue: 'amber',
-    name: 'Orange berthella',
+    name: 'Berthella',
     latin: 'Berthella aurantiaca',
     fact: 'Its armor is hidden: a broad internal shell protects most of its organs beneath the glowing orange mantle.',
     image: 'orange-berthella.png',
@@ -33,11 +33,12 @@ const slugs = [
   },
   {
     hue: 'yellow',
-    name: 'Yellow umbrella slug',
+    name: 'Umbrella slug',
     latin: 'Tylodina perversa',
     fact: 'Unlike most sea slugs, it keeps an umbrella-shaped external shell and matches the yellow sponges it eats.',
     image: 'oxynoe-olivacea.png',
-    credit: 'user-supplied cutout'
+    credit: 'user-supplied cutout',
+    imageScale: 1.32
   },
   {
     hue: 'gold',
@@ -46,14 +47,6 @@ const slugs = [
     fact: 'Its yellow, knobbly back mimics the color and texture of the sponges it specializes in eating.',
     image: 'monterey-dorid.png',
     credit: 'user-supplied iNaturalist cutout'
-  },
-  {
-    hue: 'lemon',
-    name: 'Common sea lemon',
-    latin: 'Doris pseudoargus',
-    fact: 'Its lemon-peel texture camouflages it on sponge-covered reefs, while retractable gills and rhinophores tuck away from danger.',
-    image: 'sea-lemon.png',
-    credit: 'Wikimedia Commons'
   },
   {
     hue: 'green',
@@ -65,7 +58,7 @@ const slugs = [
   },
   {
     hue: 'emerald',
-    name: 'Eastern emerald elysia',
+    name: 'Eastern elysia',
     latin: 'Elysia chlorotica',
     fact: 'It keeps chloroplasts from Vaucheria algae working inside its cells—one of the longest-lasting cases of kleptoplasty.',
     image: 'eastern-emerald.png',
@@ -81,20 +74,11 @@ const slugs = [
   },
   {
     hue: 'blue',
-    name: 'Blue dragon',
+    name: 'Sea swallow',
     latin: 'Glaucus atlanticus',
     fact: 'It eats Portuguese men-of-war, sorts their unfired stinging cells, and packs the strongest into its own fingertips.',
     image: 'blue-dragon.png',
     credit: 'Wikimedia Commons'
-  },
-  {
-    hue: 'azure',
-    name: "Loch's chromodoris",
-    latin: 'Chromodoris lochi',
-    fact: 'Its electric-blue pattern advertises sponge-derived chemical defenses stored in glands along its mantle.',
-    image: 'lochs-chromodoris.png',
-    credit: 'Wikimedia Commons',
-    imageScale: 1.32
   },
   {
     hue: 'iceblue',
@@ -106,7 +90,7 @@ const slugs = [
   },
   {
     hue: 'violetblue',
-    name: 'Blue dragon nudibranch',
+    name: 'Solar-powered nudibranch',
     latin: 'Pteraeolidia ianthina',
     fact: 'It farms photosynthetic algae inside its body and stores stolen stinging cells in the tips of its cerata.',
     image: 'pteraeolidia.png',
@@ -114,7 +98,7 @@ const slugs = [
   },
   {
     hue: 'magenta',
-    name: 'Purple flabellina',
+    name: 'Flabellina',
     latin: 'Flabellina affinis',
     fact: 'It eats stinging hydroids without firing their weapons, then stores the stolen stinging cells in its cerata for defense.',
     image: 'purple-flabellina.png',
@@ -138,7 +122,7 @@ const slugs = [
   },
   {
     hue: 'rainbow',
-    name: 'Rainbow sea slug',
+    name: "Anadón's babakina",
     latin: 'Babakina anadoni',
     fact: 'Like other aeolids, it routes its digestive gland through its cerata and arms their tips with stinging cells taken from prey.',
     image: 'rainbow-sea-slug.png',
@@ -171,7 +155,7 @@ slugs.forEach(({ hue, name, latin, fact, image, credit, imageScale = 1 }, index)
   colorline.append(button);
 
   const article = document.createElement('article');
-  article.className = 'slug';
+  article.className = `slug${latin === 'Babakina anadoni' ? ' finale' : ''}`;
   article.id = id;
   article.dataset.index = index;
   article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"><figcaption>real animal · ${credit}</figcaption></figure><div class="copy"><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;

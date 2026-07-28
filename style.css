@@ -195,6 +195,69 @@ header {
   background: transparent;
 }
 
+.slug.finale {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 28%, #ff4d87a8 0 8%, transparent 27%),
+    radial-gradient(circle at 78% 72%, #44e6b2a8 0 9%, transparent 29%),
+    radial-gradient(circle at 68% 22%, #5f7dffa0 0 10%, transparent 31%),
+    #f5f0e9;
+}
+
+.slug.finale::before,
+.slug.finale::after {
+  position: absolute;
+  z-index: 0;
+  inset: -55%;
+  content: '';
+  pointer-events: none;
+}
+
+.slug.finale::before {
+  background:
+    repeating-conic-gradient(
+      from 12deg at 50% 50%,
+      #ff4f76 0deg 18deg,
+      #ffad38 18deg 36deg,
+      #f6e657 36deg 54deg,
+      #50d48d 54deg 72deg,
+      #4a9bef 72deg 90deg,
+      #8168d9 90deg 108deg,
+      #d669c2 108deg 126deg
+    );
+  opacity: .42;
+  filter: blur(42px) saturate(1.3);
+  animation: finale-swirl 18s linear infinite;
+}
+
+.slug.finale::after {
+  inset: -20%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 14%, #f5f0e9 15% 19%, transparent 20% 31%, #ffffff70 32% 34%, transparent 35%),
+    repeating-conic-gradient(from 0deg, transparent 0deg 13deg, #ffffff80 14deg 15deg, transparent 16deg 28deg);
+  opacity: .48;
+  mix-blend-mode: soft-light;
+  animation: finale-swirl-reverse 25s linear infinite;
+}
+
+.slug.finale .copy {
+  padding: clamp(28px, 4vw, 58px);
+  margin-right: 7vw;
+  border: 1px solid #ffffff80;
+  border-radius: 30px;
+  background: #f8f3edbd;
+  box-shadow: 0 24px 70px #3c2d6c2e;
+  backdrop-filter: blur(16px);
+}
+
+@keyframes finale-swirl {
+  to { transform: rotate(1turn) scale(1.08); }
+}
+
+@keyframes finale-swirl-reverse {
+  to { transform: rotate(-1turn) scale(1.12); }
+}
+
 .wash {
   display: none;
 }
@@ -298,6 +361,8 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero { animation: none; }
+  .slug.finale::before,
+  .slug.finale::after { animation: none; }
 }
 
 @media (max-width: 720px) {
@@ -323,6 +388,10 @@ footer a {
     flex-shrink: 0;
   }
   .copy { padding: 0; }
+  .slug.finale .copy {
+    margin-right: 0;
+    padding: 28px;
+  }
   .copy h2 { font-size: clamp(48px, 14vw, 76px); }
   .wash {
     top: 15vh;
