@@ -369,21 +369,22 @@ footer {
 footer::before {
   position: absolute;
   z-index: -1;
-  inset: 0;
+  inset: -36px;
   content: '';
   pointer-events: none;
   background: repeating-conic-gradient(
-    from var(--finale-spin) at 50% -26svh,
-    #ed93a9 0deg 18deg,
-    #f5b578 18deg 36deg,
-    #f7e66b 36deg 54deg,
-    #79bea6 54deg 72deg,
-    #77b9ce 72deg 90deg,
-    #8b8fc8 90deg 108deg,
-    #b27ac3 108deg 126deg
+    from var(--finale-spin) at 50% calc(-26svh + 36px),
+    color-mix(in srgb, #ed93a9 72%, #f5f0e9) 0deg 18deg,
+    color-mix(in srgb, #f5b578 72%, #f5f0e9) 18deg 36deg,
+    color-mix(in srgb, #f7e66b 72%, #f5f0e9) 36deg 54deg,
+    color-mix(in srgb, #79bea6 72%, #f5f0e9) 54deg 72deg,
+    color-mix(in srgb, #77b9ce 72%, #f5f0e9) 72deg 90deg,
+    color-mix(in srgb, #8b8fc8 72%, #f5f0e9) 90deg 108deg,
+    color-mix(in srgb, #b27ac3 72%, #f5f0e9) 108deg 126deg
   );
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
+  filter: blur(28px) saturate(.82);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0 36px, #000 calc(24svh + 36px));
+  mask-image: linear-gradient(to bottom, transparent 0 36px, #000 calc(24svh + 36px));
   animation: finale-swirl 18s linear infinite;
 }
 
