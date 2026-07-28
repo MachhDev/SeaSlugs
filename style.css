@@ -372,28 +372,16 @@ footer::before {
   inset: 0;
   content: '';
   pointer-events: none;
-  background:
-    radial-gradient(
-      circle at 58% 48%,
-      #ffffff66 0 5%,
-      transparent 6% 13%,
-      #ffffff80 14% 17%,
-      transparent 18% 29%,
-      #ffffff52 30% 32%,
-      transparent 33%
-    ),
-    conic-gradient(
-      from 12deg at 58% 48%,
-      #ed93a9 0% 14%,
-      #f5b578 14% 28%,
-      #f7e66b 28% 42%,
-      #79bea6 42% 57%,
-      #77b9ce 57% 71%,
-      #8b8fc8 71% 85%,
-      #b27ac3 85% 100%
-    );
-  filter: blur(24px) saturate(1.12);
-  transform: scale(1.08);
+  background: radial-gradient(
+    circle at 58% 46%,
+    #f7e66b 0%,
+    #79bea6 23%,
+    #77b9ce 44%,
+    #8b8fc8 63%,
+    #b27ac3 79%,
+    #ed93a9 92%,
+    #f5b578 100%
+  );
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
   mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
 }
