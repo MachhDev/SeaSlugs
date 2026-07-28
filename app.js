@@ -33,15 +33,15 @@ const slugs = [
   },
   {
     hue: 'yellow',
-    name: 'Yellow umbrella',
+    name: 'Yellow umbrella slug',
     latin: 'Tylodina perversa',
     fact: 'Unlike most sea slugs, it keeps an umbrella-shaped external shell and matches the yellow sponges it eats.',
-    image: 'yellow-umbrella.png',
-    credit: 'Wikimedia Commons'
+    image: 'oxynoe-olivacea.png',
+    credit: 'user-supplied cutout'
   },
   {
     hue: 'gold',
-    name: 'Monterey dorid',
+    name: 'Monterey sea lemon',
     latin: 'Doris montereyensis',
     fact: 'Its yellow, knobbly back mimics the color and texture of the sponges it specializes in eating.',
     image: 'monterey-dorid.png',
@@ -49,19 +49,11 @@ const slugs = [
   },
   {
     hue: 'lemon',
-    name: 'Sea lemon',
+    name: 'Common sea lemon',
     latin: 'Doris pseudoargus',
     fact: 'Its lemon-peel texture camouflages it on sponge-covered reefs, while retractable gills and rhinophores tuck away from danger.',
     image: 'sea-lemon.png',
     credit: 'Wikimedia Commons'
-  },
-  {
-    hue: 'chartreuse',
-    name: 'Mediterranean oxynoe',
-    latin: 'Oxynoe olivacea',
-    fact: 'It turns an algal chemical into stronger oxytoxins—and can drop its toxin-loaded tail when attacked.',
-    image: 'oxynoe-olivacea.png',
-    credit: 'user-supplied cutout'
   },
   {
     hue: 'green',
@@ -101,7 +93,8 @@ const slugs = [
     latin: 'Chromodoris lochi',
     fact: 'Its electric-blue pattern advertises sponge-derived chemical defenses stored in glands along its mantle.',
     image: 'lochs-chromodoris.png',
-    credit: 'Wikimedia Commons'
+    credit: 'Wikimedia Commons',
+    imageScale: 1.32
   },
   {
     hue: 'iceblue',
@@ -136,14 +129,6 @@ const slugs = [
     credit: 'user-supplied cutout'
   },
   {
-    hue: 'orchid',
-    name: 'Purple hypselodoris',
-    latin: 'Hypselodoris apolegma',
-    fact: 'It turns sponge chemistry into protection, concentrating dietary compounds in specialized mantle glands.',
-    image: 'purple-hypselodoris.png',
-    credit: 'Wikimedia Commons'
-  },
-  {
     hue: 'fairy',
     name: 'Fairy butterfly sea slug',
     latin: 'Cyerce elegans',
@@ -175,7 +160,7 @@ const main = root.querySelector('main');
 const collection = root.querySelector('#collection');
 const colorline = root.querySelector('.colorline');
 
-slugs.forEach(({ hue, name, latin, fact, image, credit }, index) => {
+slugs.forEach(({ hue, name, latin, fact, image, credit, imageScale = 1 }, index) => {
   const id = `slug-${index}`;
   const button = document.createElement('button');
   button.type = 'button';
@@ -189,7 +174,7 @@ slugs.forEach(({ hue, name, latin, fact, image, credit }, index) => {
   article.className = 'slug';
   article.id = id;
   article.dataset.index = index;
-  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100"><figcaption>real animal · ${credit}</figcaption></figure><div class="copy"><p class="number">${String(index + 1).padStart(2, '0')} · ${hue}</p><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
+  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"><figcaption>real animal · ${credit}</figcaption></figure><div class="copy"><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
   collection.append(article);
 });
 
