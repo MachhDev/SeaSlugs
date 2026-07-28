@@ -152,6 +152,7 @@ header {
 }
 
 #collection {
+  overflow: hidden;
   background:
     linear-gradient(
       to right,
@@ -197,6 +198,7 @@ header {
 
 .slug.finale {
   isolation: isolate;
+  overflow: visible;
   background: transparent;
 }
 
@@ -210,7 +212,7 @@ header {
 }
 
 .slug.finale::before {
-  inset: 0 -55%;
+  inset: -28svh -55% 0;
   background:
     radial-gradient(circle at 18% 28%, #ff4d87a8 0 8%, transparent 27%),
     radial-gradient(circle at 78% 72%, #44e6b2a8 0 9%, transparent 29%),
@@ -227,20 +229,20 @@ header {
     );
   opacity: .42;
   filter: blur(42px) saturate(1.3);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28svh, #000 calc(100% - 22svh), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 28svh, #000 calc(100% - 22svh), transparent 100%);
   animation: finale-swirl 18s linear infinite;
 }
 
 .slug.finale::after {
-  inset: 0 -20%;
+  inset: -24svh -20% 0;
   background:
     radial-gradient(circle at 50% 50%, transparent 0 14%, #f5f0e9 15% 19%, transparent 20% 31%, #ffffff70 32% 34%, transparent 35%),
     repeating-conic-gradient(from 0deg, transparent 0deg 13deg, #ffffff80 14deg 15deg, transparent 16deg 28deg);
   opacity: .48;
   mix-blend-mode: soft-light;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh, #000 calc(100% - 18svh), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24svh, #000 calc(100% - 18svh), transparent 100%);
   animation: finale-swirl-reverse 25s linear infinite;
 }
 
