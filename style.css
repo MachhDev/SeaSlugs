@@ -373,8 +373,26 @@ footer::before {
   content: '';
   pointer-events: none;
   background:
-    radial-gradient(circle at 48% 8%, #aa8edb8c 0 10%, transparent 34%),
-    linear-gradient(135deg, #ed93a9, #f5b578 24%, #f7e66b 43%, #79bea6 66%, #779fce 82%, #8b8fc8);
+    radial-gradient(
+      circle at 50% 8%,
+      transparent 0 12%,
+      #ffffff80 13% 16%,
+      transparent 17% 28%,
+      #ffffff52 29% 31%,
+      transparent 32%
+    ),
+    repeating-conic-gradient(
+      from 12deg at 50% 8%,
+      #ed93a9 0deg 28deg,
+      #f5b578 28deg 56deg,
+      #f7e66b 56deg 84deg,
+      #79bea6 84deg 112deg,
+      #77b9ce 112deg 140deg,
+      #8b8fc8 140deg 168deg,
+      #b27ac3 168deg 196deg
+    );
+  filter: blur(24px) saturate(1.12);
+  transform: scale(1.08);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
   mask-image: linear-gradient(to bottom, transparent 0, #000 24svh);
 }
