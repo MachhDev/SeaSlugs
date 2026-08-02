@@ -137,9 +137,9 @@ const slugs = [
   },
   {
     hue: 'rainbow',
-    name: "Anadón's babakina",
+    name: "Rainbow Slug",
     latin: 'Babakina anadoni',
-    fact: 'Like other aeolids, it routes its digestive gland through its cerata and arms their tips with stinging cells taken from prey.',
+    fact: 'The rhinopores atop their head sense chemicals in the water.',
     image: 'rainbow-sea-slug.png',
     video: 'https://www.youtube.com/watch?v=BV5YeKMyHaU',
     credit: 'Wikimedia Commons'
@@ -154,11 +154,22 @@ root.innerHTML = `
     <section id="top" class="hero"><p class="eyebrow">A field guide to the sea’s living spectrum</p><h1>Every color<br>has a <em>slug.</em></h1><p class="intro">Scroll the reef in color order. Each small, soft-bodied marvel is a real animal with an unbelievable trick.</p></section>
     <section id="collection"></section>
     <footer><p>Keep drifting. The ocean is full of color.</p><a href="#top">back to the surface ↑</a><small class="image-note">All images used with permission.</small></footer>
+      <section id="action" class="action-panel" aria-labelledby="action-title">
+      <div class="action-tab">See them in action</div>
+      <div class="action-heading">
+        <p class="eyebrow">16 tiny lives, moving</p>
+        <h2 id="action-title">Meet them<br><em>in the sea.</em></h2>
+        <p>Each name opens an individual YouTube video in a new tab.</p>
+      </div>
+      <div class="action-list"></div>
+    </section>
+
   </main>`;
 
 const main = root.querySelector('main');
 const collection = root.querySelector('#collection');
 const colorline = root.querySelector('.colorline');
+const actionList = root.querySelector('.action-list');
 
 slugs.forEach(({ hue, name, latin, fact, image, video, imageScale = 1 }, index) => {
   const id = `slug-${index}`;
@@ -174,8 +185,18 @@ slugs.forEach(({ hue, name, latin, fact, image, video, imageScale = 1 }, index) 
   article.className = `slug${latin === 'Babakina anadoni' ? ' finale' : ''}`;
   article.id = id;
   article.dataset.index = index;
-  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"></figure><div class="copy"><h2><a href="${video}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${name} on YouTube (opens in a new tab)">${name}</a></h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
+  article.innerHTML = `<div class="wash"></div><figure class="photo"><img src="images/slugs-cutout/${image}" alt="Photograph of ${name}" loading="${index < 2 ? 'eager' : 'lazy'}" width="1600" height="1100" style="--image-scale: ${imageScale}"></figure><div class="copy"><h2>${name}</h2><p class="latin">${latin}</p><ul><li><b>SUPERPOWER</b></li><li>${fact}</li></ul></div>`;
   collection.append(article);
+
+  const actionLink = document.createElement('a');
+  actionLink.className = 'action-link';
+  actionLink.href = video;
+  actionLink.target = '_blank';
+  actionLink.rel = 'noopener noreferrer';
+  actionLink.style.setProperty('--link-color', `var(--${hue})`);
+  actionLink.setAttribute('aria-label', `Watch ${name} in the sea on YouTube (opens in a new tab)`);
+  actionLink.innerHTML = `<span class="action-index">${String(index + 1).padStart(2, '0')}</span><span class="action-dot" aria-hidden="true"></span><span class="action-name">${name}</span><span class="action-watch">watch <span aria-hidden="true">↗</span></span>`;
+  actionList.append(actionLink);
 });
 
 const buttons = [...colorline.querySelectorAll('button')];
