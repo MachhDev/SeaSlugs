@@ -322,6 +322,26 @@ header {
   letter-spacing: -.06em;
 }
 
+.copy h2 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: .05em;
+  text-underline-offset: .12em;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.copy h2 a:hover,
+.copy h2 a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.copy h2 a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: .08em;
+}
+
 .latin {
   margin: 18px 0 42px;
   font: italic 18px 'Playfair Display';
